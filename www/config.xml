@@ -8,16 +8,10 @@
 
     <preference name="phonegap-version" value="3.3.0" />
 
-    <name>50th App</name>
+    <name>50th-Anniversary-App</name>
     
     <description>
-    Compute the average amount of time task X will take given 
-    Y amount of people are working on it Z hours a day. This application can also tell you that 
-    you need to apply X amount of people to accomplish task Y in Z days. All time figures are 
-    based off of historic records of Brasfield &amp; Gorrie, LLC. Any creation, modification,
-    or deletion of data must be done from the PlanME web application. All data in this app
-    is syncronized on application launch. If no signal is present this app will pull the
-    last used data.
+    Android and iOS mobile app that acts as a tour guide, show casing projects completed in Birmingham, AL by Brasfield & Gorrie, LLC.
     </description>
     
     <author href="http://www.brasfieldgorrie.com" email="mgotfryd@brasfieldgorrie.com">
