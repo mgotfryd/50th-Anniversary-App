@@ -1,0 +1,196 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>Dashboard Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style type="text/css"></style>
+    <style id="holderjs-style" type="text/css"></style>
+</head>
+
+<body>
+
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div id="directions-panel"></div>
+        </div>
+        <div class="col-sm-8">
+            <div id="map-canvas" style="width: 100%; height: 100%"></div>
+        </div>
+    </div>
+    
+    <br />
+    
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="js/mapCode.js"></script>
+</body>
+</html>
+
+<!--
+    
+    <!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>50th Anniversary App</title>
+    <style>
+        html, body, #map-canvas {
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #panel {
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            margin-left: -180px;
+            z-index: 5;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #999;
+        }
+
+        #directions-panel {
+            height: 100%;
+            float: right;
+            width: 390px;
+            overflow: auto;
+        }
+
+        #map-canvas {
+            margin-right: 400px;
+        }
+
+        #control {
+            background: #fff;
+            padding: 5px;
+            font-size: 14px;
+            font-family: Arial;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+            display: none;
+        }
+
+        @media print {
+            #map-canvas {
+                height: 500px;
+                margin: 0;
+            }
+
+            #directions-panel {
+                float: none;
+                width: auto;
+            }
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script>
+        var directionsDisplay;
+        var map;
+        var directionsService = new google.maps.DirectionsService();
+
+        function initialize() {
+
+
+            directionsDisplay = new google.maps.DirectionsRenderer();
+            var mapOptions = {
+                zoom: 14,
+                center: new google.maps.LatLng(33.5248, -86.8127)
+            };
+             map = new google.maps.Map(document.getElementById('map-canvas'),
+                mapOptions);
+            directionsDisplay.setMap(map);
+            directionsDisplay.setPanel(document.getElementById('directions-panel'));
+
+            //current location
+            var geo = window.navigator.geolocation;
+            if (geo) {
+                geo.getCurrentPosition(showPos, showErr);
+            }
+
+            function showPos(pos) {
+                var lat = pos.coords.latitude;
+                var lng = pos.coords.longitude;
+
+                var start = lat + "," + lng;
+                var end = "3021 7th ave south birmingham, al";
+                var request = {
+                    origin: start,
+                    destination: end,
+                    travelMode: google.maps.TravelMode.WALKING
+                };
+                directionsService.route(request, function (response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setDirections(response);
+                    }
+                });
+            }
+
+            function showErr(err) {
+                console.log(err);
+            }
+
+
+
+
+
+
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+        var marker = null;
+
+        function autoUpdate() {
+            console.log("updating");
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var newPoint = new google.maps.LatLng(position.coords.latitude,
+                                                      position.coords.longitude);
+
+                if (marker) {
+                    // Marker already created - Move it
+                    marker.setPosition(newPoint);
+                }
+                else {
+                    // Marker does not exist - Create it
+                    marker = new google.maps.Marker({
+                        position: newPoint,
+                        map: map
+                    });
+                }
+
+                // Center the map on the new position
+                map.setCenter(newPoint);
+            });
+
+            // Call the autoUpdate() function every 5 seconds
+            setTimeout(autoUpdate, 5000);
+        }
+
+        autoUpdate();
+
+    </script>
+</head>
+<body>
+    <div id="directions-panel"></div>
+    <div id="map-canvas"></div>
+</body>
+</html>
+-->
